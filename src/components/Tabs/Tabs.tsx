@@ -2,7 +2,7 @@ import { Children, useId, useMemo, useRef, useState, type KeyboardEvent, type Re
 import type { TabProps, TabsProps } from "./types";
 import "./Tabs.css";
 
-export function Tabs({ children, defaultIndex = 0 }: TabsProps) {
+export function Tabs({ children, defaultIndex = 0, ariaLabel = "Tabs" }: TabsProps) {
   
   const baseId = useId();
 
@@ -57,7 +57,7 @@ export function Tabs({ children, defaultIndex = 0 }: TabsProps) {
 
   return (
     <div className="tabs">
-      <div className="tabs-header" role="tablist" aria-label="Tabs">
+      <div className="tabs-header" role="tablist" aria-label={ariaLabel}>
         {tabs.map((tab, index) => {
           const selected = activeIndex === index;
           const tabId = `${baseId}-tab-${index}`;

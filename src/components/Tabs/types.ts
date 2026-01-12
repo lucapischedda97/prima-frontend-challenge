@@ -5,6 +5,7 @@ export type BadgeVariant = "default" | "error" | "success";
 export type TabsProps = {
   children: ReactElement<TabProps> | ReactElement<TabProps>[];
   defaultIndex?: number;
+  ariaLabel?: string;
 };
 
 export type TabProps = {
