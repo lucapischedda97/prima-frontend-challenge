@@ -7,21 +7,29 @@ import "./index.css";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
-    <React.StrictMode>
-        <Tabs ariaLabel="Main navigation tabs">
-            <Tab label="Overview">
-                Overview content
-            </Tab>
-
-            <Tab label="Files" badge={12}>
-                Files content
-            </Tab>
-
-            <Tab label="Messages" badge={3} badgeVariant="error">
-                Messages content
-            </Tab>
+  <React.StrictMode>
+    <div className="tabs-container">
+      <div>
+        <h3>Underline variant</h3>
+        <Tabs ariaLabel="Underline tabs" variant="underline">
+          <Tab label="Overview">Overview content</Tab>
+          <Tab label="Files" badge={12}>Files content</Tab>
+          <Tab label="Messages" badge={3} badgeVariant="error">
+            Messages content
+          </Tab>
         </Tabs>
-    </React.StrictMode>
+      </div>
+
+      <div>
+        <h3>Boxed variant</h3>
+        <Tabs ariaLabel="Boxed tabs" variant="boxed">
+          <Tab label="Overview">Overview content</Tab>
+          <Tab label="Files" badge={12}>Files content</Tab>
+          <Tab label="Messages" badge={3} badgeVariant="error">
+            Messages content
+          </Tab>
+        </Tabs>
+      </div>
+    </div>
+  </React.StrictMode>
 );
-
-

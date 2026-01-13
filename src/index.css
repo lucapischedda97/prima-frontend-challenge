@@ -1,6 +1,14 @@
 :root {
   --background: #eee;
   --content: #222;
+
+  --tabs-border-color: #ddd;
+  --tabs-active-color: #000;
+
+  --badge-default-bg: #eee;
+  --badge-error-bg: #ff4d4f;
+  --badge-success-bg: #52c41a;
+  --badge-text-on-dark: #ffffff;
 }
 
 body {
@@ -11,4 +19,13 @@ body {
   margin: 0;
   min-height: 100vh;
   place-content: start center;
+}
+
+.tabs-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  gap: 100px;
+  padding: 24px;
+  box-sizing: border-box;  
 }

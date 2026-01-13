@@ -2,7 +2,7 @@ import { Children, useId, useMemo, useRef, useState, type KeyboardEvent, type Re
 import type { TabProps, TabsProps } from "./types";
 import "./Tabs.css";
 
-export function Tabs({ children, defaultIndex = 0, ariaLabel = "Tabs" }: TabsProps) {
+export function Tabs({ children, defaultIndex = 0, ariaLabel = "Tabs", variant = "underline" }: TabsProps) {
   
   const baseId = useId();
 
@@ -56,7 +56,7 @@ export function Tabs({ children, defaultIndex = 0, ariaLabel = "Tabs" }: TabsPro
   };
 
   return (
-    <div className="tabs">
+    <div className={`tabs variant-${variant}`}>
       <div className="tabs-header" role="tablist" aria-label={ariaLabel}>
         {tabs.map((tab, index) => {
           const selected = activeIndex === index;

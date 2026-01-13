@@ -6,7 +6,6 @@
 .tabs-header {
   display: flex;
   gap: 8px;
-  border-bottom: 1px solid #ddd;
 }
 
 .tab-button {
@@ -18,13 +17,32 @@
   font-weight: 500;
 }
 
-.tab-button.active {
-  border-bottom: 2px solid black;
+.tab-button:focus-visible {
+  outline: 2px solid var(--tabs-active-color);
+  outline-offset: 2px;
 }
 
-.tab-button:focus-visible {
-  outline: 2px solid black;
-  outline-offset: 2px;
+.variant-underline .tabs-header {
+  border-bottom: 1px solid var(--tabs-border-color);
+}
+
+.variant-underline .tab-button.active {
+  border-bottom: 2px solid var(--tabs-active-color);
+}
+
+.variant-boxed .tabs-header {
+  border-bottom: none;
+  gap: 6px;
+}
+
+.variant-boxed .tab-button {
+  border: 1px solid var(--tabs-border-color);
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.variant-boxed .tab-button.active {
+  border-color: var(--tabs-active-color);
 }
 
 .badge {
@@ -35,17 +53,17 @@
 }
 
 .badge.default {
-  background: #eee;
+  background: var(--badge-default-bg);
 }
 
 .badge.error {
-  background: #ff4d4f;
-  color: white;
+  background: var(--badge-error-bg);
+  color: var(--badge-text-on-dark);
 }
 
 .badge.success {
-  background: #52c41a;
-  color: white;
+  background: var(--badge-success-bg);
+  color: var(--badge-text-on-dark);
 }
 
 .tabs-content {
